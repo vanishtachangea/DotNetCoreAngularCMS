@@ -1,0 +1,21 @@
+
+nav.admin {
+    background: purple;
+    position: fixed;
+    width: 150px;
+    top: 60px;
+    left: 0;
+    margin-bottom: 0;
+    z-index: 1;
+}
+nav.admin li{
+    float: none;
+}
+
+nav.admin li a {
+    color: white !important;
+    font-weight: bold;
+}
+div.space{
+    padding-left: 180px;
+}
