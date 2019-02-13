@@ -8,7 +8,8 @@
 
 <h1 class="page-title">Add a Page</h1>
 <a class="btn btn-primary" routerLink="/admin/pages">Back to All Pages</a>
-<br><br>
+<br>
+<br>
 
 <form novalidate #f="ngForm" (ngSubmit)="addPage(f)">
   <div class="form-group">
@@ -16,26 +17,24 @@
       Title
     </label>
 
-    <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="title" #pageTitle="ngModel"
-        minlength="3"
-        required
-        >
+    <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="title" #pageTitle="ngModel" minlength="3"
+      required>
   </div>
   <div class="alert alert-danger" *ngIf="pageTitle.errors?.required && pageTitle.touched"> Title is required.</div>
   <div class="alert alert-danger" *ngIf="pageTitle.errors?.minlength && pageTitle.touched"> MIn length is 3.</div>
 
   <div class="form-group">
-<label for=""> Content: </label>
-  <textarea name="content" cols="30" rows="10" class="form-control" placeholder="Content" [(ngModel)]="content"></textarea>
+    <label for=""> Content: </label>
+    <textarea name="content" cols="30" rows="10" class="form-control" placeholder="Content" [(ngModel)]="content"></textarea>
   </div>
-<div class="form-group">
-<label for="">Has Sidebar:</label>
-<input type="checkbox" name="hasSidebar" [(ngModel)]="hasSidebar">
-</div>
+  <div class="form-group">
+    <label for="">Has Sidebar:</label>
+    <input type="checkbox" name="hasSidebar" [(ngModel)]="hasSidebar">
+  </div>
 
 
-<div class="form-group">
-  <button class="btn btn-default" [disabled]="!f.valid">Add page</button>
-</div>
+  <div class="form-group">
+    <button class="btn btn-default" [disabled]="!f.valid">Add page</button>
+  </div>
 
 </form>

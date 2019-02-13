@@ -12,11 +12,11 @@ declare var CKEDITOR: any;
 })
 export class AdminSidebarComponent implements OnInit {
   content: string;
-  id:string;
+  id: string;
   successMsg: boolean = false;
 
   constructor(
-    private router:Router,
+    private router: Router,
     private sidebarService: SidebarService
 
   ) { }
@@ -25,27 +25,24 @@ export class AdminSidebarComponent implements OnInit {
     if (localStorage.getItem("user") != "\"admin\"") {
       this.router.navigateByUrl('');
     }
-    this.sidebarService.getSidebar().subscribe(res => 
-    {
+    this.sidebarService.getSidebar().subscribe(res => {
       this.content = res["content"];
-      this.id=res["id"];
+      this.id = res["id"];
 
       CKEDITOR.replace('content');
     });
 
-    
+
   }
 
-  editSidebar({value})
-  {
+  editSidebar({ value }) {
     value.content = CKEDITOR.instances.content.getData();
     this.sidebarService.putSidebar(value).subscribe(res => {
-      this.successMsg=true;
-      setTimeout(function()
-      {
-        this.successMsg=false;
-      }.bind(this),2000
-    );
+      this.successMsg = true;
+      setTimeout(function () {
+        this.successMsg = false;
+      }.bind(this), 2000
+      );
 
     });
   }

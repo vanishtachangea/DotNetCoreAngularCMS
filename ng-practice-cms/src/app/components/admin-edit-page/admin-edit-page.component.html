@@ -1,43 +1,41 @@
 <div class="alert alert-success" *ngIf="successMsg">
-    <p>Page Edited</p>
-  </div>
-  
-  <div class="alert alert-danger" *ngIf="errorMsg">
-    <p>Page title already exists, choose another name</p>
-  </div>
-  
-  <h1 class="page-title">Edit {{ page.title }} Page</h1>
-  <a class="btn btn-primary" routerLink="/admin/pages">Back to All Pages</a>
-  <br><br>
-  
-  <form novalidate #f="ngForm" (ngSubmit)="editPage(f)">
-    <div class="form-group">
-      <label for="">
-        Title
-      </label>
-  
-      <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="title" #pageTitle="ngModel"
-          minlength="3"
-          required
-          >
-    </div>
-    <div class="alert alert-danger" *ngIf="pageTitle.errors?.required && pageTitle.touched"> Title is required.</div>
-    <div class="alert alert-danger" *ngIf="pageTitle.errors?.minlength && pageTitle.touched"> MIn length is 3.</div>
-  
-    <div class="form-group">
-  <label for=""> Content: </label>
-    <textarea name="content" cols="30" rows="10" class="form-control" placeholder="Content" [(ngModel)]="content"></textarea>
-    </div>
-  <input type="hidden" name="id" [(ngModel)]="id"> 
-  
+  <p>Page Edited</p>
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMsg">
+  <p>Page title already exists, choose another name</p>
+</div>
+
+<h1 class="page-title">Edit {{ page.title }} Page</h1>
+<a class="btn btn-primary" routerLink="/admin/pages">Back to All Pages</a>
+<br>
+<br>
+
+<form novalidate #f="ngForm" (ngSubmit)="editPage(f)">
   <div class="form-group">
-      <label for="">Has Sidebar:</label>
-      <input type="checkbox" name="hasSidebar" checked="hasSidebar" [(ngModel)]="hasSidebar">
-      </div>
+    <label for="">
+      Title
+    </label>
+
+    <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="title" #pageTitle="ngModel" minlength="3"
+      required>
+  </div>
+  <div class="alert alert-danger" *ngIf="pageTitle.errors?.required && pageTitle.touched"> Title is required.</div>
+  <div class="alert alert-danger" *ngIf="pageTitle.errors?.minlength && pageTitle.touched"> MIn length is 3.</div>
+
+  <div class="form-group">
+    <label for=""> Content: </label>
+    <textarea name="content" cols="30" rows="10" class="form-control" placeholder="Content" [(ngModel)]="content"></textarea>
+  </div>
+  <input type="hidden" name="id" [(ngModel)]="id">
+
+  <div class="form-group">
+    <label for="">Has Sidebar:</label>
+    <input type="checkbox" name="hasSidebar" checked="hasSidebar" [(ngModel)]="hasSidebar">
+  </div>
 
   <div class="form-group">
     <button class="btn btn-default" [disabled]="!f.valid">Edit page</button>
-  </div> 
-  
-  </form>
-  
+  </div>
+
+</form>

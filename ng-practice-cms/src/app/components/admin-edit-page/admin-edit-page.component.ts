@@ -31,8 +31,8 @@ export class AdminEditPageComponent implements OnInit {
     if (localStorage.getItem("user") != "\"admin\"") {
       this.router.navigateByUrl('');
     }
-    
-      
+
+
 
     this.route.params.subscribe(params => {
       this.param = params['id'];
@@ -44,8 +44,8 @@ export class AdminEditPageComponent implements OnInit {
 
         if (page["hasSideBar"] == "true")
           this.hasSidebar = true;
-        
-          CKEDITOR.replace('content');
+
+        CKEDITOR.replace('content');
 
       });
 

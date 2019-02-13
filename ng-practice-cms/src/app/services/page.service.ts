@@ -1,38 +1,35 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { AppSettings } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
+
 })
 export class PageService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
   public pagesBS = new BehaviorSubject<Object>(null);
 
-  getPages()
-  {
-    return this.http.get('http://localhost:51639/api/pages');
+  getPages() {
+    return this.http.get(AppSettings.API_BASE_URL+'/api/pages');
   }
 
-  getPage(slug)
-  {
-    return this.http.get('http://localhost:51639/api/pages/' + slug);
+  getPage(slug) {
+    return this.http.get(AppSettings.API_BASE_URL+'/api/pages/' + slug);
   }
-  postAddPage(value)
-  {
-    return this.http.post('http://localhost:51639/api/pages/create' , value);
+  postAddPage(value) {
+    return this.http.post(AppSettings.API_BASE_URL+'/api/pages/create', value);
   }
-  getEditPage(id)
-  {
-    return this.http.get('http://localhost:51639/api/pages/edit/' + id);
+  getEditPage(id) {
+    return this.http.get(AppSettings.API_BASE_URL+'/api/pages/edit/' + id);
   }
-  putEditPage(value)
-  {
-    return this.http.put('http://localhost:51639/api/pages/edit/' + value.id, value);
+  putEditPage(value) {
+    return this.http.put(AppSettings.API_BASE_URL+'/api/pages/edit/' + value.id, value);
   }
-  deletePage(id)
-  {
-    return this.http.delete('http://localhost:51639/api/pages/delete/' + id);
+  deletePage(id) {
+    return this.http.delete(AppSettings.API_BASE_URL+'/api/pages/delete/' + id);
   }
 } 

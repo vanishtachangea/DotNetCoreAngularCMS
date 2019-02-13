@@ -1,4 +1,7 @@
 
+body{
+    background:red;
+}
 nav.admin {
     background: purple;
     position: fixed;

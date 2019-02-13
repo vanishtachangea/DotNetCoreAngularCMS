@@ -8,7 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="/">CMS</a>
+      <a *ngIf="isAdmin()" class="navbar-brand" routerLink="/">CMS</a>
+      <a *ngIf="!isAdmin()" class="navbar-brand" routerLink="/">Home</a>
       <!--<a class="navbar-brand" href="#">CMS</a>-->
     </div>
     <div id="navbar" class="collapse navbar-collapse">
@@ -21,22 +22,22 @@
       </ul>
 
       <ul *ngIf="!userLoggedIn" class="nav navbar-nav navbar-right">
-         
-            <li>
-              <a routerLink="/register">Register</a>
-            </li>
-            <li>
-                <a routerLink="/login">Login</a>
-              </li>
-         
-        </ul>
-        <ul *ngIf="userLoggedIn" class="nav navbar-nav navbar-right">
-            
-              <li>
-                <a routerLink="/logout">Hi {{user}}, Logout</a>
-              </li>
-           
-          </ul>
+
+        <li>
+          <a routerLink="/register">Register</a>
+        </li>
+        <li>
+          <a routerLink="/login">Login</a>
+        </li>
+
+      </ul>
+      <ul *ngIf="userLoggedIn" class="nav navbar-nav navbar-right">
+
+        <li>
+          <a routerLink="/logout">Hi {{user}}, Logout</a>
+        </li>
+
+      </ul>
     </div>
     <!--/.nav-collapse -->
   </div>

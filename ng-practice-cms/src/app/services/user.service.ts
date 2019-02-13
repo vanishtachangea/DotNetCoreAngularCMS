@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppSettings } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,11 @@ export class UserService {
 
   ) { }
 
-  register(user)
-  {
-    return this.http.post('http://localhost:51639/api/users/register', user);
+  register(user) {
+    return this.http.post(AppSettings.API_BASE_URL+'/api/users/register', user);
   }
 
-  login(user)
-  {
-    return this.http.post('http://localhost:51639/api/users/login', user);
+  login(user) {
+    return this.http.post(AppSettings.API_BASE_URL+'/api/users/login', user);
   }
 }

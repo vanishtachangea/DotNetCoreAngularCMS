@@ -6,6 +6,10 @@ export const environment = {
   production: false
 };
 
+export class AppSettings {
+  public static API_BASE_URL='http://localhost:51639';
+}
+
 /*
  * In development mode, to ignore zone related error stack frames such as
  * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can

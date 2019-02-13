@@ -12,12 +12,20 @@ export class NavbarComponent implements OnInit {
   user: string;
   get userLoggedIn() {
     if (localStorage.getItem("user")) {
-      this.user = localStorage.getItem("user").replace(/\"/g,"");
+      this.user = localStorage.getItem("user").replace(/\"/g, "");
       return true;
     }
     return false;
   }
   constructor(public pageService: PageService) { }
+
+  isAdmin() {
+    if (localStorage.getItem("user") != "\"admin\"") {
+        return false;
+    }
+    else
+      return true;
+  }
 
   ngOnInit() {
     this.pageService.getPages().subscribe(pages => {
