@@ -44,6 +44,8 @@ namespace UCMSAPI
             }
 
             app.UseMvc();
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
         }
     }
 }

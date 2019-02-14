@@ -16,6 +16,7 @@ export class AdminAddPageComponent implements OnInit {
   errorMsg: boolean = false;
   title: string;
   content: string;
+  hasSidebar:boolean=false;
   //slug:string;
 
   constructor(

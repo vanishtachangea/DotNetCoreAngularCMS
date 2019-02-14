@@ -10,6 +10,8 @@ import { UserService } from '../../services/user.service';
 export class RegisterComponent implements OnInit {
 
   userExists: boolean = false;
+  username: string;
+  password:string;
 
   constructor(
     private router: Router,

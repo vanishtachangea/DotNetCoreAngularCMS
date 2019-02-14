@@ -3,12 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false, 
+  API_BASE_URL:'http://localhost:51639'
 };
 
-export class AppSettings {
-  public static API_BASE_URL='http://localhost:51639';
-}
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as
