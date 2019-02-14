@@ -1,0 +1,12 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "ng-practice-cms",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
