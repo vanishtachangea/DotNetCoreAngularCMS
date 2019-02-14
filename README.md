@@ -3,8 +3,8 @@
 2. It has been deployed to AWS. The Web API has been deployed using the AWS Elastic Beanstalk and the Angular Application has been deployed as serverless using S3. 
 3. This is how it works: https://www.screencast.com/t/sTDvOcuA . You can try it out: 
 		Admin Credentials: 
-		admin
-		admin
+		* admin
+		* admin
 		
 # Codes
 - Folder  ng-practice-cms : The angular application
