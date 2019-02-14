@@ -7,6 +7,6 @@
 		admin
 		
 # Codes
-Folder  ng-practice-cms : The angular application
-Folder UCMSAPI: Web API folder before attempting the deployment to AWS
-Folder UCMSAPI2: Final WEB API folder
+- Folder  ng-practice-cms : The angular application
+- Folder UCMSAPI: Web API folder before attempting the deployment to AWS
+- Folder UCMSAPI2: Final WEB API folder
